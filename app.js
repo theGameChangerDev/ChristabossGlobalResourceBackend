@@ -3,10 +3,12 @@ const dotenv = require("dotenv");
 const nodemailer = require("nodemailer");
 const mysql = require('mysql2/promise');
 const app = express();
+const cors = require('cors');
 
 dotenv.config()
 
 app.use(express.json())
+app.use(cors());
 
 // Create MySQL connection pool
 const pool = mysql.createPool({
