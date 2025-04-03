@@ -103,6 +103,11 @@ app.post("/api/form", async (req, res) => {
     }
 })
 
+// Health check endpoint for ALB
+app.get('/healthstatus', (req, res) => {
+  res.status(200).send('OK');
+});
+
 const Port = process.env.PORT || 3000;
 
 app.listen(Port, (req, res) => {
